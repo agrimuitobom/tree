@@ -47,6 +47,7 @@ export default function CameraCapture({
         streamRef.current = stream;
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
+          await videoRef.current.play();
         }
         setIsActive(true);
       } catch (err) {
